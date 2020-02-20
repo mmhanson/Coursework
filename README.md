@@ -36,7 +36,7 @@ These projects build up a local spreadsheet editor in C#. The ultimate result is
 3. Assignment 3: Computing normals for and making the Utah Teapot rotate
 4. Assignment 4: Implementing skeletal animation and skinning algorithms
 5. Assignment 5: Implementing ray tracing algorithms
-6. Assignment 6: Final project. This project actually turned into [Voxography](github.com/mmhanson/Voxography).
+6. Assignment 6: Final project. This project actually turned into [Voxography](https://github.com/mmhanson/Voxography).
 
 ### Data Structures and Algorithms
 #### CS 2420 at the University of Utah, completed in Spring 2018.
