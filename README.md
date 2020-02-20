@@ -3,10 +3,11 @@ This is a repository for my notable coursework and major projects that I've comp
 ### Systems Programming
 CS 4400 at the University of Utah, completed in Fall 2019
 1. Assignment 1: x86 Processor Emulator
-2. Assignment 2: Binary bomb
-3. memory allocator
-4. Shell
-
+2. Assignment 2: Binary bomb, an exercise in reverse-engineering and decompiling
+3. Assignment 3: Code optimization in C
+4. Assignment 4: A small shell with forking, signal handling, and piping
+5. Assignment 5: Custom memory allocator, essentially a reimplementation of 'malloc'
+6. Assignment 6: A concurrent TCP server in C
 
 ### Custom FFmpeg Codec
 
