@@ -38,13 +38,12 @@ These projects build up a local spreadsheet editor in C#. The ultimate result is
 5. Assignment 5: Implementing ray tracing algorithms
 6. Assignment 6: Final project. This project actually turned into [Voxography](https://github.com/mmhanson/Voxography).
 
-### Data Structures and Algorithms
-#### CS 2420 at the University of Utah, completed in Spring 2018.
-
-Miscellaneous assignments as I was learning about basic data structures and algorithms. This class went over searching algorithms and trees and basic stuff like that.
-
-
 ### Spacewars
 #### CS 3500 at the University of Utah, completed in Fall 2018.
 
 This is a recreation of the 1977 arcade game 'Space Wars' in C# with full multiplayer support.
+
+### Data Structures and Algorithms
+#### CS 2420 at the University of Utah, completed in Spring 2018.
+
+Miscellaneous assignments as I was learning about basic data structures and algorithms. This class went over searching algorithms and trees and basic stuff like that.
