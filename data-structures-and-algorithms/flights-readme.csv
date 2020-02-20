@@ -1,0 +1,9 @@
+COLUMN_NAME,DESCRIPTION
+ORIGIN,Origin Airport
+DESTINATION,Destination Airport
+CARRIER,Code assigned by IATA and commonly used to identify an operating airline carrier. These codes have varied over time but they should be unique for the dataset you have been given.
+DELAY,Difference in minutes between scheduled and actual departure time. Early departures set to 0.
+CANCELED,Canceled Flight Indicator (1=Yes)
+TIME,Elapsed Time of Flight (in Minutes)
+DISTANCE,Distance between airports (in Miles)
+COST,Average Quarterly Market Fare (related to cost) for a given Origin-Destination flight (ItinYield*MktMilesFlown)

@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<spreadsheet><cell><name>A1</name><contents>10</contents><history><0/></history><dependents><dependent>A1</dependent></dependents></cell><cell><name>C4</name><contents>10</contents><history><0/></history><dependents><dependent>C4</dependent></dependents></cell><cell><name>B3</name><contents>5</contents><history><0/></history><dependents><dependent>B3</dependent></dependents></cell><cell><name>C2</name><contents>=B3*2</contents><history><0/></history><dependents><dependent>C2</dependent></dependents></cell></spreadsheet>

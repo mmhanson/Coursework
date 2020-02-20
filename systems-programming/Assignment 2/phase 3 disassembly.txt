@@ -1,0 +1,40 @@
+=> 0x0000000000400f47 <+0>:	sub    $0x18,%rsp                       # epilogue
+   0x0000000000400f4b <+4>:	lea    0x8(%rsp),%rcx                   # (j) rcx = addr(M[0x8 + rsp]). Init j. fourth arg to sscanf.
+   0x0000000000400f50 <+9>:	lea    0xc(%rsp),%rdx                   # (i) rdx = addr(M[0xC + rsp]). Init i. third arg to sscanf.
+   0x0000000000400f55 <+14>:	mov    $0x4027ed,%esi                   # esi = 0x4027ED ("%d %d") -- second arg to sscanf
+   0x0000000000400f5a <+19>:	mov    $0x0,%eax                        # eax = 0 -- clear return value reg.
+   0x0000000000400f5f <+24>:	callq  0x400c10 <__isoc99_sscanf@plt>   # eax = sscanf(input, "%d %d", i, j). Mangles rdi (input).
+   0x0000000000400f64 <+29>:	cmp    $0x1,%eax                        # |
+   0x0000000000400f67 <+32>:	jg     0x400f6e <phase_3+39>            # |-> if (eax <= 1), explode
+   0x0000000000400f69 <+34>:	callq  0x401574 <explode_bomb>          # |   (i.e. if less than 2 numbers read -> explode.)
+
+   0x0000000000400f6e <+39>:	cmpl   $0x7,0xc(%rsp)                   # |-> if (7 < M[0xC + rsp]), explode
+   0x0000000000400f73 <+44>:	ja     0x400fb1 <phase_3+106>           # |   if (i > 7), explode
+   0x0000000000400f75 <+46>:	mov    0xc(%rsp),%eax                    # | -> jump to TABLE[i]
+   0x0000000000400f79 <+50>:	jmpq   *0x402520(,%rax,8)                # |
+   0x0000000000400f80 <+57>:	mov    $0x1f9,%eax                      # eax = 0x1F9
+   0x0000000000400f85 <+62>:	jmp    0x400fc2 <phase_3+123>
+   0x0000000000400f87 <+64>:	mov    $0x36,%eax                       # eax = 0x36
+   0x0000000000400f8c <+69>:	jmp    0x400fc2 <phase_3+123>
+   0x0000000000400f8e <+71>:	mov    $0x247,%eax                      # eax = 0x247
+   0x0000000000400f93 <+76>:	jmp    0x400fc2 <phase_3+123>
+   0x0000000000400f95 <+78>:	mov    $0xf9,%eax                       # eax = 0xF9
+   0x0000000000400f9a <+83>:	jmp    0x400fc2 <phase_3+123>
+   0x0000000000400f9c <+85>:	mov    $0x28f,%eax                      # eax = 0x28F
+   0x0000000000400fa1 <+90>:	jmp    0x400fc2 <phase_3+123>
+   0x0000000000400fa3 <+92>:	mov    $0x145,%eax                      # eax = 0x145
+   0x0000000000400fa8 <+97>:	jmp    0x400fc2 <phase_3+123>
+   0x0000000000400faa <+99>:	mov    $0x35a,%eax                      # eax = 0x35A
+   0x0000000000400faf <+104>:	jmp    0x400fc2 <phase_3+123>
+   0x0000000000400fb1 <+106>:	callq  0x401574 <explode_bomb>          # explode!
+   0x0000000000400fb6 <+111>:	mov    $0x0,%eax                        # eax = 0
+   0x0000000000400fbb <+116>:	jmp    0x400fc2 <phase_3+123>
+   0x0000000000400fbd <+118>:	mov    $0x3b5,%eax                      # eax = 0x3B5
+
+   0x0000000000400fc2 <+123>:	cmp    0x8(%rsp),%eax                   # |-> if (j != eax), explode
+   0x0000000000400fc6 <+127>:	je     0x400fcd <phase_3+134>           # |
+   0x0000000000400fc8 <+129>:	callq  0x401574 <explode_bomb>          # |
+
+   0x0000000000400fcd <+134>:	add    $0x18,%rsp                       # |-> end phase
+   0x0000000000400fd1 <+138>:	retq                                    # |
+

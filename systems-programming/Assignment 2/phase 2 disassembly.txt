@@ -1,0 +1,49 @@
+Dump of assembler code for function phase_2:
+=> 0x0000000000400efc <+0>:	push   %rbp
+   0x0000000000400efd <+1>:	push   %rbx
+   0x0000000000400efe <+2>:	sub    $0x28,%rsp
+   0x0000000000400f02 <+6>:	mov    %rsp,%rsi
+   0x0000000000400f05 <+9>:	callq  0x4015aa <read_six_numbers>
+   0x0000000000400f0a <+14>:	cmpl   $0x0,(%rsp)                  # |
+   0x0000000000400f0e <+18>:	jns    0x400f34 <phase_2+56>        # |--> if neg(rsp), explode
+   0x0000000000400f10 <+20>:	callq  0x401574 <explode_bomb>      # |
+   0x0000000000400f15 <+25>:	jmp    0x400f34 <phase_2+56>
+
+   0x0000000000400f17 <+27>:	mov    %ebx,%eax                    # eax = ebx
+   0x0000000000400f19 <+29>:	add    -0x4(%rbp),%eax              # eax += M[rbp - 0x4]
+   0x0000000000400f1c <+32>:	cmp    %eax,0x0(%rbp)               # |
+   0x0000000000400f1f <+35>:	je     0x400f26 <phase_2+42>        # |--> if (eax != M[rbp]), then explode
+   0x0000000000400f21 <+37>:	callq  0x401574 <explode_bomb>
+   0x0000000000400f26 <+42>:	add    $0x1,%ebx                     # ebx += 0x1
+   0x0000000000400f29 <+45>:	add    $0x4,%rbp                     # rsp += 0x4
+   0x0000000000400f2d <+49>:	cmp    $0x6,%ebx                     # |
+   0x0000000000400f30 <+52>:	jne    0x400f17 <phase_2+27>         # |--> If (ebx != 6), then continue loop
+   0x0000000000400f32 <+54>:	jmp    0x400f40 <phase_2+68>         # |    else, break loop
+
+   0x0000000000400f34 <+56>:	lea    0x4(%rsp),%rbp               # |--> rbp = M[rsp+0x4]
+   0x0000000000400f39 <+61>:	mov    $0x1,%ebx                    # |--> ebx = 0x1
+   0x0000000000400f3e <+66>:	jmp    0x400f17 <phase_2+27>
+
+   0x0000000000400f40 <+68>:	add    $0x28,%rsp
+   0x0000000000400f44 <+72>:	pop    %rbx
+   0x0000000000400f45 <+73>:	pop    %rbp
+   0x0000000000400f46 <+74>:	retq
+
+Dump of assembler code for function read_six_numbers:
+=> 0x00000000004015aa <+0>:	sub    $0x18,%rsp                     # epilogue
+   0x00000000004015ae <+4>:	mov    %rsi,%rdx                      # arg2 -> arg3
+   0x00000000004015b1 <+7>:	lea    0x4(%rsi),%rcx                 # (arg2 + 0x4) -> arg4
+   0x00000000004015b5 <+11>:	lea    0x14(%rsi),%rax                # (arg2 + 0x14) -> retval
+   0x00000000004015b9 <+15>:	mov    %rax,0x8(%rsp)                 # retval -> M[rsp + 0x8]
+   0x00000000004015be <+20>:	lea    0x10(%rsi),%rax                # (arg2 + 0x10) -> retval
+   0x00000000004015c2 <+24>:	mov    %rax,(%rsp)                    # retval -> M[rsp]
+   0x00000000004015c6 <+28>:	lea    0xc(%rsi),%r9                  # (rsi + 0xC) -> arg6
+   0x00000000004015ca <+32>:	lea    0x8(%rsi),%r8                  # (rsi + 0x8) -> arg5
+   0x00000000004015ce <+36>:	mov    $0x4027e1,%esi                 # rsi = 0x4027e1
+   0x00000000004015d3 <+41>:	mov    $0x0,%eax                      # retval = 0
+   0x00000000004015d8 <+46>:	callq  0x400c10 <__isoc99_sscanf@plt> # call sscanf
+   0x00000000004015dd <+51>:	cmp    $0x5,%eax
+   0x00000000004015e0 <+54>:	jg     0x4015e7 <read_six_numbers+61>
+   0x00000000004015e2 <+56>:	callq  0x401574 <explode_bomb>
+   0x00000000004015e7 <+61>:	add    $0x18,%rsp
+   0x00000000004015eb <+65>:	retq

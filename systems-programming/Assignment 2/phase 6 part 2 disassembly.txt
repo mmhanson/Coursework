@@ -1,0 +1,25 @@
+L5:
+   0x0000000000401159 <+133>:	mov    0x8(%rdx),%rdx               # rdx = M[rdx + 0x8]
+   0x000000000040115d <+137>:	add    $0x1,%eax                    # eax += 0x1
+   0x0000000000401160 <+140>:	cmp    %ecx,%eax                    # |-> if (eax != ecx), then goto L5
+   0x0000000000401162 <+142>:	jne    0x401159 <phase_6+133>       # |   else goto L7
+   0x0000000000401164 <+144>:	jmp    0x40116b <phase_6+151>       # |
+L6:
+   0x0000000000401166 <+146>:	mov    $0x6042f0,%edx               # edx = 0x6042f0
+L7:
+   0x000000000040116b <+151>:	mov    %rdx,(%rsp,%rsi,2)           # M[2*rsi + rsp] = rdx
+   0x000000000040116f <+155>:	add    $0x4,%rsi                    # rsi += 0x4
+   0x0000000000401173 <+159>:	cmp    $0x18,%rsi                   # |-> if (rsi == 0x18), then goto L9
+   0x0000000000401177 <+163>:	je     0x40118e <phase_6+186>       # |
+L8:
+   0x0000000000401179 <+165>:	mov    0x30(%rsp,%rsi,1),%ecx       # ecx = M[0x30 + rsi + rsp]
+   0x000000000040117d <+169>:	cmp    $0x1,%ecx                    # |-> if (ecx <= 0x1), then goto L6
+   0x0000000000401180 <+172>:	jle    0x401166 <phase_6+146>       # |   else:
+   0x0000000000401182 <+174>:	mov    $0x1,%eax                    # |     eax = 0x1
+   0x0000000000401187 <+179>:	mov    $0x6042f0lL,%edx               # |     edx = 0x6042F0
+   0x000000000040118c <+184>:	jmp    0x401159 <phase_6+133>       # |     goto L5
+L9:
+   0x000000000040118e <+186>:	mov    (%rsp),%rbx                  # rbx = M[rsp]
+   0x0000000000401192 <+190>:	lea    0x8(%rsp),%rax               # rax = A[rsp + 0x8]
+   0x0000000000401197 <+195>:	lea    0x30(%rsp),%rsi              # rsi = A[rsp + 0x30]
+   0x000000000040119c <+200>:	mov    %rbx,%rcx                    # rcx = rbx	

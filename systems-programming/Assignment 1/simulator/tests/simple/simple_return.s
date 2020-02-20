@@ -1,0 +1,3 @@
+main:
+	printr	%eax
+	ret

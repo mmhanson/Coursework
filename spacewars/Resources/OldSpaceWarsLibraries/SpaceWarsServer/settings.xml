@@ -1,0 +1,20 @@
+<SpaceSettings>
+  <UniverseSize>750</UniverseSize>
+  <MSPerFrame>15</MSPerFrame>
+  <FramesPerShot>6</FramesPerShot>
+  <RespawnRate>300</RespawnRate> 
+  <Star>
+    <x>0</x>
+    <y>0</y>
+    <mass>0.01</mass>
+  </Star>
+
+
+<!-- We can add other stars too (or none) 
+  <Star>
+    <x>100</x>
+    <y>100</y>
+    <mass>0.005</mass>
+  </Star>
+ -->
+</SpaceSettings>

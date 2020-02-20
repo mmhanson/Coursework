@@ -1,0 +1,12 @@
+   0x0000000000401136 <+98>:	lea    0x48(%rsp),%rsi              # rsi = A[rsp + 0x48]                    # z = N[6]. Just after N,
+   0x000000000040113b <+103>:	mov    %r14,%rax                    # rax = r14                              # a = N[0]
+   0x000000000040113e <+106>:	mov    $0x7,%ecx                    # ecx = 0x7                              # b = 7.
+L4:
+   0x0000000000401143 <+111>:	mov    %ecx,%edx                    # edx = ecx                              # |-> c = b
+   0x0000000000401145 <+113>:	sub    (%rax),%edx                  # edx -= M[rax]                          # |   c = b - *a
+   0x0000000000401147 <+115>:	mov    %edx,(%rax)                  # M[rax] = edx                           # |   *a = c
+   0x0000000000401149 <+117>:	add    $0x4,%rax                    # rax += 0x4.                            # a++, 
+   0x000000000040114d <+121>:	cmp    %rsi,%rax                    # |-> if (rax != rsi), then goto L4      # |-> if (a != z), goto L4
+   0x0000000000401150 <+124>:	jne    0x401143 <phase_6+111>       # |   else:                              # |   else: 
+   0x0000000000401152 <+126>:	mov    $0x0,%esi                    # |     esi = 0x0                        # |     z = 0
+   0x0000000000401157 <+131>:	jmp    0x401179 <phase_6+165>       # |     goto L8                          # |     goto L8

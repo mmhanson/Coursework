@@ -1,0 +1,34 @@
+Dump of assembler code for function phase_5:
+=> 0x0000000000401067 <+0>:	sub    $0x18,%rsp                      # prologue
+   0x000000000040106b <+4>:	lea    0x8(%rsp),%rcx                  # (j) rcx = A[rsp + 0x8]
+   0x0000000000401070 <+9>:	lea    0xc(%rsp),%rdx                  # (i) rdx = A[rsp + 0xC]
+   0x0000000000401075 <+14>:	mov    $0x4027ed,%esi                  # esi = 0x4027ED ("%d %d")
+   0x000000000040107a <+19>:	mov    $0x0,%eax                       # eax = 0x0. Clear retval.
+   0x000000000040107f <+24>:	callq  0x400c10 <__isoc99_sscanf@plt>  # eax = sscanf(input, "%d %d", i, j)
+   0x0000000000401084 <+29>:	cmp    $0x1,%eax                       # |-> if (eax <= 0x1), then explode
+   0x0000000000401087 <+32>:	jg     0x40108e <phase_5+39>           # |
+   0x0000000000401089 <+34>:	callq  0x401574 <explode_bomb>         # |
+   0x000000000040108e <+39>:	mov    0xc(%rsp),%eax                  # eax = i
+   0x0000000000401092 <+43>:	and    $0xf,%eax                       # eax = eax & 0xF
+   0x0000000000401095 <+46>:	mov    %eax,0xc(%rsp)                  # i = eax
+   0x0000000000401099 <+50>:	cmp    $0xf,%eax                       # |-> if (eax = 0xF), then explode
+   0x000000000040109c <+53>:	je     0x4010ca <phase_5+99>           # |
+   0x000000000040109e <+55>:	mov    $0x0,%ecx                       # (k) ecx = 0
+   0x00000000004010a3 <+60>:	mov    $0x0,%edx                       # (l) edx = 0
+L1:
+   0x00000000004010a8 <+65>:	add    $0x1,%edx                       # l += 1
+   0x00000000004010ab <+68>:	cltq                                   # sign extend eax to rax
+   0x00000000004010ad <+70>:	mov    0x402560(,%rax,4),%eax          # eax = M[4*rax + 0x402560] -- i =M[4*i + 0x402560]
+   0x00000000004010b4 <+77>:	add    %eax,%ecx                       # k += i
+   0x00000000004010b6 <+79>:	cmp    $0xf,%eax                       # |-> if (i != 0xF), then goto L1
+   0x00000000004010b9 <+82>:	jne    0x4010a8 <phase_5+65>           # |
+
+   0x00000000004010bb <+84>:	mov    %eax,0xc(%rsp)                  # i = eax. Store eax (working) back into i (mem).
+   0x00000000004010bf <+88>:	cmp    $0xf,%edx                       # |-> if (edx != 0xF), then explode
+   0x00000000004010c2 <+91>:	jne    0x4010ca <phase_5+99>           # |   else if (ecx != j), then explode
+   0x00000000004010c4 <+93>:	cmp    0x8(%rsp),%ecx                  # |      else, pass phase
+   0x00000000004010c8 <+97>:	je     0x4010cf <phase_5+104>          # |
+   0x00000000004010ca <+99>:	callq  0x401574 <explode_bomb>
+   0x00000000004010cf <+104>:	add    $0x18,%rsp                      # |-> epilogue
+   0x00000000004010d3 <+108>:	retq                                   # |
+

@@ -1,0 +1,21 @@
+#include <dirent.h> 
+#include <stdio.h> 
+
+int main(void)
+{
+    DIR           *dirp;
+    struct dirent *directory;
+
+    dirp = opendir("/home/user/");
+    if (dirp)
+    {
+        while ((directory = readdir(dirp)) != NULL)
+        {
+          printf("%s\n", directory->d_name);
+        }
+
+        closedir(dirp);
+    }
+
+    return(0);
+}

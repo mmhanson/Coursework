@@ -1,0 +1,2 @@
+./sdriver.pl -t trace13.txt -s ./tsh -a "-p"
+Makefile:50: recipe for target 'test13' failed

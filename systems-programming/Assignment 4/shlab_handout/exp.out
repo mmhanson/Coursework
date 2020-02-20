@@ -1,0 +1,183 @@
+./sdriver.pl -t trace13.txt -s ./tshref -a "-p"
+#
+# trace13.txt - Restart every stopped process in process group
+#
+tsh> ./mysplit 4
+Job [1] (15923) stopped by signal 20
+tsh> jobs
+[1] (15923) Stopped ./mysplit 4 
+tsh> /bin/ps a
+  PID TTY      STAT   TIME COMMAND
+ 1422 tty1     Ssl+   0:00 /usr/lib/gdm3/gdm-wayland-session gnome-session --autostart /usr/share/gdm/greeter/autostart
+ 1434 tty1     Sl+    0:00 /usr/lib/gnome-session/gnome-session-binary --autostart /usr/share/gdm/greeter/autostart
+ 1473 tty1     Sl+    1:22 /usr/bin/gnome-shell
+ 1703 tty1     Sl+    0:00 /usr/bin/Xwayland :1024 -rootless -terminate -accessx -core -listen 4 -listen 5 -displayfd 6
+ 1801 tty1     Sl     0:00 ibus-daemon --xim --panel disable
+ 1804 tty1     Sl     0:00 /usr/lib/ibus/ibus-dconf
+ 1806 tty1     Sl     0:00 /usr/lib/ibus/ibus-x11 --kill-daemon
+ 1859 tty1     Sl+    0:00 /usr/lib/gnome-settings-daemon/gsd-xsettings
+ 1867 tty1     Sl+    0:00 /usr/lib/gnome-settings-daemon/gsd-a11y-settings
+ 1868 tty1     Sl+    0:00 /usr/lib/gnome-settings-daemon/gsd-clipboard
+ 1872 tty1     Sl+    0:06 /usr/lib/gnome-settings-daemon/gsd-color
+ 1873 tty1     Sl+    0:00 /usr/lib/gnome-settings-daemon/gsd-datetime
+ 1874 tty1     Sl+    0:00 /usr/lib/gnome-settings-daemon/gsd-housekeeping
+ 1875 tty1     Sl+    0:00 /usr/lib/gnome-settings-daemon/gsd-keyboard
+ 1885 tty1     Sl+    0:00 /usr/lib/gnome-settings-daemon/gsd-media-keys
+ 1889 tty1     Sl+    0:00 /usr/lib/gnome-settings-daemon/gsd-mouse
+ 1890 tty1     Sl+    0:00 /usr/lib/gnome-settings-daemon/gsd-power
+ 1891 tty1     Sl+    0:00 /usr/lib/gnome-settings-daemon/gsd-print-notifications
+ 1894 tty1     Sl+    0:00 /usr/lib/gnome-settings-daemon/gsd-rfkill
+ 1895 tty1     Sl+    0:00 /usr/lib/gnome-settings-daemon/gsd-screensaver-proxy
+ 1898 tty1     Sl+    0:00 /usr/lib/gnome-settings-daemon/gsd-sharing
+ 1903 tty1     Sl+    0:00 /usr/lib/gnome-settings-daemon/gsd-smartcard
+ 1905 tty1     Sl+    0:00 /usr/lib/gnome-settings-daemon/gsd-sound
+ 1910 tty1     Sl+    0:00 /usr/lib/gnome-settings-daemon/gsd-wacom
+ 1925 tty1     Sl     0:00 /usr/lib/ibus/ibus-engine-simple
+ 3021 tty2     Ssl+   0:00 /usr/lib/gdm3/gdm-x-session --run-script env GNOME_SHELL_SESSION_MODE=ubuntu gnome-session --session=ubuntu
+ 3023 tty2     Sl+   46:04 /usr/lib/xorg/Xorg vt2 -displayfd 3 -auth /run/user/1000/gdm/Xauthority -background none -noreset -keeptty -verbose 3
+ 3042 tty2     Sl+    0:00 /usr/lib/gnome-session/gnome-session-binary --session=ubuntu
+ 3166 tty2     Sl+   15:26 /usr/bin/gnome-shell
+ 3210 tty2     Sl     3:26 ibus-daemon --xim --panel disable
+ 3214 tty2     Sl     0:00 /usr/lib/ibus/ibus-dconf
+ 3216 tty2     Sl     1:29 /usr/lib/ibus/ibus-x11 --kill-daemon
+ 3282 tty2     Sl+    0:01 /usr/lib/gnome-settings-daemon/gsd-power
+ 3284 tty2     Sl+    0:00 /usr/lib/gnome-settings-daemon/gsd-print-notifications
+ 3285 tty2     Sl+    0:00 /usr/lib/gnome-settings-daemon/gsd-rfkill
+ 3286 tty2     Sl+    0:00 /usr/lib/gnome-settings-daemon/gsd-screensaver-proxy
+ 3287 tty2     Sl+    0:09 /usr/lib/gnome-settings-daemon/gsd-sharing
+ 3290 tty2     Sl+    0:00 /usr/lib/gnome-settings-daemon/gsd-smartcard
+ 3293 tty2     Sl+    0:00 /usr/lib/gnome-settings-daemon/gsd-sound
+ 3300 tty2     Sl+    0:01 /usr/lib/gnome-settings-daemon/gsd-wacom
+ 3303 tty2     Sl+    0:01 /usr/lib/gnome-settings-daemon/gsd-xsettings
+ 3317 tty2     Sl+    0:00 /usr/lib/gnome-settings-daemon/gsd-a11y-settings
+ 3319 tty2     Sl+    0:00 /usr/lib/gnome-settings-daemon/gsd-clipboard
+ 3325 tty2     Sl+    0:07 /usr/lib/gnome-settings-daemon/gsd-color
+ 3327 tty2     Sl+    0:00 /usr/lib/gnome-settings-daemon/gsd-datetime
+ 3328 tty2     Sl+    0:02 /usr/lib/gnome-settings-daemon/gsd-housekeeping
+ 3329 tty2     Sl+    0:01 /usr/lib/gnome-settings-daemon/gsd-keyboard
+ 3334 tty2     Sl+    0:01 /usr/lib/gnome-settings-daemon/gsd-media-keys
+ 3338 tty2     Sl+    0:00 /usr/lib/gnome-settings-daemon/gsd-mouse
+ 3374 tty2     Sl+    0:00 /usr/lib/gnome-disk-utility/gsd-disk-utility-notify
+ 3375 tty2     Sl+    0:08 nautilus-desktop
+ 3421 tty2     Sl     1:01 /usr/lib/ibus/ibus-engine-simple
+ 3645 tty2     Sl+    0:00 /usr/lib/gnome-settings-daemon/gsd-printer
+ 4197 pts/0    Ss     0:03 bash
+ 4275 tty2     SLl+   0:07 /usr/bin/gnome-software --gapplication-service
+ 4278 tty2     Sl+    0:02 update-notifier
+ 4284 tty2     Sl+   97:16 /usr/lib/firefox/firefox -new-window
+ 4442 tty2     Sl+    6:48 /usr/lib/firefox/firefox -contentproc -childID 3 -isForBrowser -prefsLen 6359 -prefMapSize 208507 -parentBuildID 20191021054351 -greomni /usr/lib/firefox/omni.ja -appomni /usr/lib/firefox/browser/omni.ja -appdir /usr/lib/firefox/browser 4284 true tab
+ 4547 tty2     Sl+    4:49 /usr/lib/firefox/firefox -contentproc -childID 4 -isForBrowser -prefsLen 7905 -prefMapSize 208507 -parentBuildID 20191021054351 -greomni /usr/lib/firefox/omni.ja -appomni /usr/lib/firefox/browser/omni.ja -appdir /usr/lib/firefox/browser 4284 true tab
+ 4766 tty2     Sl+    0:42 /opt/piavpn/bin/pia-client
+ 5255 tty2     Sl+    0:00 /usr/lib/deja-dup/deja-dup-monitor
+ 6535 tty2     Sl+    0:01 gnome-calculator
+ 6807 pts/3    Ss+    0:00 bash
+ 6850 tty2     Sl+    7:52 /usr/lib/firefox/firefox -contentproc -childID 14 -isForBrowser -prefsLen 8934 -prefMapSize 208507 -parentBuildID 20191021054351 -greomni /usr/lib/firefox/omni.ja -appomni /usr/lib/firefox/browser/omni.ja -appdir /usr/lib/firefox/browser 4284 true tab
+ 6911 tty2     Sl+   64:25 /usr/lib/firefox/firefox -contentproc -parentBuildID 20191021054351 -prefsLen 8934 -prefMapSize 208507 -greomni /usr/lib/firefox/omni.ja -appomni /usr/lib/firefox/browser/omni.ja -appdir /usr/lib/firefox/browser 4284 true rdd
+ 7246 tty2     Sl+    0:27 /usr/lib/firefox/firefox -contentproc -childID 15 -isForBrowser -prefsLen 9091 -prefMapSize 208507 -parentBuildID 20191021054351 -greomni /usr/lib/firefox/omni.ja -appomni /usr/lib/firefox/browser/omni.ja -appdir /usr/lib/firefox/browser 4284 true tab
+ 9334 tty2     Sl+    0:41 /usr/lib/firefox/firefox -contentproc -childID 21 -isForBrowser -prefsLen 9646 -prefMapSize 208507 -parentBuildID 20191021054351 -greomni /usr/lib/firefox/omni.ja -appomni /usr/lib/firefox/browser/omni.ja -appdir /usr/lib/firefox/browser 4284 true tab
+ 9947 tty2     Sl+    5:09 /usr/lib/firefox/firefox -contentproc -childID 22 -isForBrowser -prefsLen 9721 -prefMapSize 208507 -parentBuildID 20191021054351 -greomni /usr/lib/firefox/omni.ja -appomni /usr/lib/firefox/browser/omni.ja -appdir /usr/lib/firefox/browser 4284 true tab
+10250 tty2     Sl+    3:02 /usr/bin/python2.7 /usr/bin/calibre
+10276 tty2     S+     0:00 /usr/bin/python2.7 /usr/bin/calibre-parallel --pipe-worker from calibre.utils.ipc.pool import run_main, worker_main; run_main(worker_main)
+11299 pts/1    Ss     0:00 bash
+12806 tty2     Sl+    5:48 /usr/bin/emacs25
+13735 pts/1    S+     0:00 man 2 wait
+13745 pts/1    S+     0:00 pager
+14501 tty2     Sl+    0:02 /usr/lib/firefox/firefox -contentproc -childID 30 -isForBrowser -prefsLen 10011 -prefMapSize 208507 -parentBuildID 20191021054351 -greomni /usr/lib/firefox/omni.ja -appomni /usr/lib/firefox/browser/omni.ja -appdir /usr/lib/firefox/browser 4284 true tab
+14539 tty2     Sl+    0:00 /usr/lib/firefox/firefox -contentproc -childID 31 -isForBrowser -prefsLen 10011 -prefMapSize 208507 -parentBuildID 20191021054351 -greomni /usr/lib/firefox/omni.ja -appomni /usr/lib/firefox/browser/omni.ja -appdir /usr/lib/firefox/browser 4284 true tab
+15146 tty2     Sl+    0:12 /usr/bin/python3 /usr/bin/meld
+15427 tty2     Sl+    0:00 /usr/bin/python3 /usr/bin/meld
+15700 pts/0    S+     0:00 bash tester.sh
+15918 pts/0    S+     0:00 make rtest13
+15919 pts/0    S+     0:00 /bin/sh -c ./sdriver.pl -t trace13.txt -s ./tshref -a "-p"
+15920 pts/0    S+     0:00 /usr/bin/perl ./sdriver.pl -t trace13.txt -s ./tshref -a -p
+15921 pts/0    S+     0:00 ./tshref -p
+15923 pts/0    T      0:00 ./mysplit 4
+15924 pts/0    T      0:00 ./mysplit 4
+15928 pts/0    R      0:00 /bin/ps a
+tsh> fg %1
+tsh> /bin/ps a
+  PID TTY      STAT   TIME COMMAND
+ 1422 tty1     Ssl+   0:00 /usr/lib/gdm3/gdm-wayland-session gnome-session --autostart /usr/share/gdm/greeter/autostart
+ 1434 tty1     Sl+    0:00 /usr/lib/gnome-session/gnome-session-binary --autostart /usr/share/gdm/greeter/autostart
+ 1473 tty1     Sl+    1:22 /usr/bin/gnome-shell
+ 1703 tty1     Sl+    0:00 /usr/bin/Xwayland :1024 -rootless -terminate -accessx -core -listen 4 -listen 5 -displayfd 6
+ 1801 tty1     Sl     0:00 ibus-daemon --xim --panel disable
+ 1804 tty1     Sl     0:00 /usr/lib/ibus/ibus-dconf
+ 1806 tty1     Sl     0:00 /usr/lib/ibus/ibus-x11 --kill-daemon
+ 1859 tty1     Sl+    0:00 /usr/lib/gnome-settings-daemon/gsd-xsettings
+ 1867 tty1     Sl+    0:00 /usr/lib/gnome-settings-daemon/gsd-a11y-settings
+ 1868 tty1     Sl+    0:00 /usr/lib/gnome-settings-daemon/gsd-clipboard
+ 1872 tty1     Sl+    0:06 /usr/lib/gnome-settings-daemon/gsd-color
+ 1873 tty1     Sl+    0:00 /usr/lib/gnome-settings-daemon/gsd-datetime
+ 1874 tty1     Sl+    0:00 /usr/lib/gnome-settings-daemon/gsd-housekeeping
+ 1875 tty1     Sl+    0:00 /usr/lib/gnome-settings-daemon/gsd-keyboard
+ 1885 tty1     Sl+    0:00 /usr/lib/gnome-settings-daemon/gsd-media-keys
+ 1889 tty1     Sl+    0:00 /usr/lib/gnome-settings-daemon/gsd-mouse
+ 1890 tty1     Sl+    0:00 /usr/lib/gnome-settings-daemon/gsd-power
+ 1891 tty1     Sl+    0:00 /usr/lib/gnome-settings-daemon/gsd-print-notifications
+ 1894 tty1     Sl+    0:00 /usr/lib/gnome-settings-daemon/gsd-rfkill
+ 1895 tty1     Sl+    0:00 /usr/lib/gnome-settings-daemon/gsd-screensaver-proxy
+ 1898 tty1     Sl+    0:00 /usr/lib/gnome-settings-daemon/gsd-sharing
+ 1903 tty1     Sl+    0:00 /usr/lib/gnome-settings-daemon/gsd-smartcard
+ 1905 tty1     Sl+    0:00 /usr/lib/gnome-settings-daemon/gsd-sound
+ 1910 tty1     Sl+    0:00 /usr/lib/gnome-settings-daemon/gsd-wacom
+ 1925 tty1     Sl     0:00 /usr/lib/ibus/ibus-engine-simple
+ 3021 tty2     Ssl+   0:00 /usr/lib/gdm3/gdm-x-session --run-script env GNOME_SHELL_SESSION_MODE=ubuntu gnome-session --session=ubuntu
+ 3023 tty2     Sl+   46:04 /usr/lib/xorg/Xorg vt2 -displayfd 3 -auth /run/user/1000/gdm/Xauthority -background none -noreset -keeptty -verbose 3
+ 3042 tty2     Sl+    0:00 /usr/lib/gnome-session/gnome-session-binary --session=ubuntu
+ 3166 tty2     Sl+   15:26 /usr/bin/gnome-shell
+ 3210 tty2     Sl     3:26 ibus-daemon --xim --panel disable
+ 3214 tty2     Sl     0:00 /usr/lib/ibus/ibus-dconf
+ 3216 tty2     Sl     1:29 /usr/lib/ibus/ibus-x11 --kill-daemon
+ 3282 tty2     Sl+    0:01 /usr/lib/gnome-settings-daemon/gsd-power
+ 3284 tty2     Sl+    0:00 /usr/lib/gnome-settings-daemon/gsd-print-notifications
+ 3285 tty2     Sl+    0:00 /usr/lib/gnome-settings-daemon/gsd-rfkill
+ 3286 tty2     Sl+    0:00 /usr/lib/gnome-settings-daemon/gsd-screensaver-proxy
+ 3287 tty2     Sl+    0:09 /usr/lib/gnome-settings-daemon/gsd-sharing
+ 3290 tty2     Sl+    0:00 /usr/lib/gnome-settings-daemon/gsd-smartcard
+ 3293 tty2     Sl+    0:00 /usr/lib/gnome-settings-daemon/gsd-sound
+ 3300 tty2     Sl+    0:01 /usr/lib/gnome-settings-daemon/gsd-wacom
+ 3303 tty2     Sl+    0:01 /usr/lib/gnome-settings-daemon/gsd-xsettings
+ 3317 tty2     Sl+    0:00 /usr/lib/gnome-settings-daemon/gsd-a11y-settings
+ 3319 tty2     Sl+    0:00 /usr/lib/gnome-settings-daemon/gsd-clipboard
+ 3325 tty2     Sl+    0:07 /usr/lib/gnome-settings-daemon/gsd-color
+ 3327 tty2     Sl+    0:00 /usr/lib/gnome-settings-daemon/gsd-datetime
+ 3328 tty2     Sl+    0:02 /usr/lib/gnome-settings-daemon/gsd-housekeeping
+ 3329 tty2     Sl+    0:01 /usr/lib/gnome-settings-daemon/gsd-keyboard
+ 3334 tty2     Sl+    0:01 /usr/lib/gnome-settings-daemon/gsd-media-keys
+ 3338 tty2     Sl+    0:00 /usr/lib/gnome-settings-daemon/gsd-mouse
+ 3374 tty2     Sl+    0:00 /usr/lib/gnome-disk-utility/gsd-disk-utility-notify
+ 3375 tty2     Sl+    0:08 nautilus-desktop
+ 3421 tty2     Sl     1:01 /usr/lib/ibus/ibus-engine-simple
+ 3645 tty2     Sl+    0:00 /usr/lib/gnome-settings-daemon/gsd-printer
+ 4197 pts/0    Ss     0:03 bash
+ 4275 tty2     SLl+   0:07 /usr/bin/gnome-software --gapplication-service
+ 4278 tty2     Sl+    0:02 update-notifier
+ 4284 tty2     Sl+   97:16 /usr/lib/firefox/firefox -new-window
+ 4442 tty2     Sl+    6:48 /usr/lib/firefox/firefox -contentproc -childID 3 -isForBrowser -prefsLen 6359 -prefMapSize 208507 -parentBuildID 20191021054351 -greomni /usr/lib/firefox/omni.ja -appomni /usr/lib/firefox/browser/omni.ja -appdir /usr/lib/firefox/browser 4284 true tab
+ 4547 tty2     Sl+    4:49 /usr/lib/firefox/firefox -contentproc -childID 4 -isForBrowser -prefsLen 7905 -prefMapSize 208507 -parentBuildID 20191021054351 -greomni /usr/lib/firefox/omni.ja -appomni /usr/lib/firefox/browser/omni.ja -appdir /usr/lib/firefox/browser 4284 true tab
+ 4766 tty2     Sl+    0:42 /opt/piavpn/bin/pia-client
+ 5255 tty2     Sl+    0:00 /usr/lib/deja-dup/deja-dup-monitor
+ 6535 tty2     Sl+    0:01 gnome-calculator
+ 6807 pts/3    Ss+    0:00 bash
+ 6850 tty2     Sl+    7:52 /usr/lib/firefox/firefox -contentproc -childID 14 -isForBrowser -prefsLen 8934 -prefMapSize 208507 -parentBuildID 20191021054351 -greomni /usr/lib/firefox/omni.ja -appomni /usr/lib/firefox/browser/omni.ja -appdir /usr/lib/firefox/browser 4284 true tab
+ 6911 tty2     Sl+   64:25 /usr/lib/firefox/firefox -contentproc -parentBuildID 20191021054351 -prefsLen 8934 -prefMapSize 208507 -greomni /usr/lib/firefox/omni.ja -appomni /usr/lib/firefox/browser/omni.ja -appdir /usr/lib/firefox/browser 4284 true rdd
+ 7246 tty2     Sl+    0:27 /usr/lib/firefox/firefox -contentproc -childID 15 -isForBrowser -prefsLen 9091 -prefMapSize 208507 -parentBuildID 20191021054351 -greomni /usr/lib/firefox/omni.ja -appomni /usr/lib/firefox/browser/omni.ja -appdir /usr/lib/firefox/browser 4284 true tab
+ 9334 tty2     Sl+    0:41 /usr/lib/firefox/firefox -contentproc -childID 21 -isForBrowser -prefsLen 9646 -prefMapSize 208507 -parentBuildID 20191021054351 -greomni /usr/lib/firefox/omni.ja -appomni /usr/lib/firefox/browser/omni.ja -appdir /usr/lib/firefox/browser 4284 true tab
+ 9947 tty2     Sl+    5:09 /usr/lib/firefox/firefox -contentproc -childID 22 -isForBrowser -prefsLen 9721 -prefMapSize 208507 -parentBuildID 20191021054351 -greomni /usr/lib/firefox/omni.ja -appomni /usr/lib/firefox/browser/omni.ja -appdir /usr/lib/firefox/browser 4284 true tab
+10250 tty2     Sl+    3:02 /usr/bin/python2.7 /usr/bin/calibre
+10276 tty2     S+     0:00 /usr/bin/python2.7 /usr/bin/calibre-parallel --pipe-worker from calibre.utils.ipc.pool import run_main, worker_main; run_main(worker_main)
+11299 pts/1    Ss     0:00 bash
+12806 tty2     Sl+    5:48 /usr/bin/emacs25
+13735 pts/1    S+     0:00 man 2 wait
+13745 pts/1    S+     0:00 pager
+14501 tty2     Sl+    0:02 /usr/lib/firefox/firefox -contentproc -childID 30 -isForBrowser -prefsLen 10011 -prefMapSize 208507 -parentBuildID 20191021054351 -greomni /usr/lib/firefox/omni.ja -appomni /usr/lib/firefox/browser/omni.ja -appdir /usr/lib/firefox/browser 4284 true tab
+14539 tty2     Sl+    0:00 /usr/lib/firefox/firefox -contentproc -childID 31 -isForBrowser -prefsLen 10011 -prefMapSize 208507 -parentBuildID 20191021054351 -greomni /usr/lib/firefox/omni.ja -appomni /usr/lib/firefox/browser/omni.ja -appdir /usr/lib/firefox/browser 4284 true tab
+15146 tty2     Sl+    0:12 /usr/bin/python3 /usr/bin/meld
+15427 tty2     Sl+    0:00 /usr/bin/python3 /usr/bin/meld
+15700 pts/0    S+     0:00 bash tester.sh
+15918 pts/0    S+     0:00 make rtest13
+15919 pts/0    S+     0:00 /bin/sh -c ./sdriver.pl -t trace13.txt -s ./tshref -a "-p"
+15920 pts/0    S+     0:00 /usr/bin/perl ./sdriver.pl -t trace13.txt -s ./tshref -a -p
+15921 pts/0    S+     0:00 ./tshref -p
+15931 pts/0    R      0:00 /bin/ps a

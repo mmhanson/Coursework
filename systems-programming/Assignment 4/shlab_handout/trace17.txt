@@ -1,0 +1,19 @@
+#
+# trace17.txt - Tests piping between two commands
+#
+
+/bin/cat mysplit.c | /bin/grep main
+
+/bin/ls /usr/include/x86_64-linux-gnu | /bin/grep 64
+
+/bin/grep 2 myint.c | /bin/cat
+
+/bin/cat myint.c | /usr/bin/wc -l
+
+./myspin 2 | /bin/cat
+
+SLEEP 3
+
+/bin/echo tsh> jobs
+jobs
+

@@ -1,0 +1,12 @@
+﻿  main.cpp
+c:\users\maxwell\documents\classes\cs 4600\hw3\hw3 solution\main.cpp(131): warning C4244: '=': conversion from '_Ty' to 'float', possible loss of data
+          with
+          [
+              _Ty=int
+          ]
+c:\users\maxwell\documents\classes\cs 4600\hw3\hw3 solution\main.cpp(204): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\maxwell\documents\classes\cs 4600\hw3\hw3 solution\main.cpp(360): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\maxwell\documents\classes\cs 4600\hw3\hw3 solution\main.cpp(424): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\maxwell\documents\classes\cs 4600\hw3\hw3 solution\main.cpp(428): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+c:\users\maxwell\documents\classes\cs 4600\hw3\hw3 solution\main.cpp(429): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+  001-OpenGL-Basics.vcxproj -> C:\Users\Maxwell\Documents\Classes\CS 4600\HW3\hw3 solution\x64\Debug\001-OpenGL-Basics.exe

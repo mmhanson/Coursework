@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<settings>
+	<StartHP>5</StartHP>
+	<MsPerFrame>15</MsPerFrame>
+	<ProjFiringDelay>6</ProjFiringDelay>
+	<RespawnDelay>300</RespawnDelay>
+	<WorldSize>750</WorldSize>
+	<EngineStrength>0.08</EngineStrength>
+	<TurnRate>2.0</TurnRate>
+	<ShipSize>20.0</ShipSize>
+	<StarSize>35.0</StarSize>
+	<ProjVelocity>15.0</ProjVelocity>
+	<GameMode>SpaceInvaders</GameMode>
+
+	<Star>
+		<x>0</x>
+		<y>0</y>
+		<mass>0.01</mass>
+	</Star>
+</settings>

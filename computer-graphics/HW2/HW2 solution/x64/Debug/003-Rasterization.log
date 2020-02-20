@@ -1,0 +1,8 @@
+﻿  main.cpp
+c:\users\maxwell\documents\classes\cs 4600\hw2\hw2 solution\main.cpp(327): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+c:\users\maxwell\documents\classes\cs 4600\hw2\hw2 solution\main.cpp(380): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+c:\users\maxwell\documents\classes\cs 4600\hw2\hw2 solution\main.cpp(386): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+c:\users\maxwell\documents\classes\cs 4600\hw2\hw2 solution\main.cpp(393): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+c:\users\maxwell\documents\classes\cs 4600\hw2\hw2 solution\main.cpp(401): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+c:\users\maxwell\documents\classes\cs 4600\hw2\hw2 solution\main.cpp(408): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+  003-Rasterization.vcxproj -> C:\Users\Maxwell\Documents\Classes\CS 4600\HW2\HW2 solution\x64\Debug\003-Rasterization.exe

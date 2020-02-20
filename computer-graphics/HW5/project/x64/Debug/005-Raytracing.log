@@ -1,0 +1,7 @@
+﻿  main.cpp
+c:\users\maxwell\documents\classes\cs 4600\hw5\project\main.cpp(118): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\maxwell\documents\classes\cs 4600\hw5\project\main.cpp(156): warning C4305: 'argument': truncation from 'double' to 'const float'
+c:\users\maxwell\documents\classes\cs 4600\hw5\project\main.cpp(157): warning C4305: 'argument': truncation from 'double' to 'const float'
+c:\users\maxwell\documents\classes\cs 4600\hw5\project\main.cpp(158): warning C4305: 'argument': truncation from 'double' to 'const float'
+c:\users\maxwell\documents\classes\cs 4600\hw5\project\main.cpp(159): warning C4305: 'argument': truncation from 'double' to 'const float'
+  005-Raytracing.vcxproj -> C:\Users\Maxwell\Documents\Classes\CS 4600\HW5\project\x64\Debug\005-Raytracing.exe

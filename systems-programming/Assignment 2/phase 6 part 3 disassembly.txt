@@ -1,0 +1,26 @@
+L9:
+   0x000000000040118e <+186>:	mov    (%rsp),%rbx                  # rbx = M[rsp]
+   0x0000000000401192 <+190>:	lea    0x8(%rsp),%rax               # rax = A[rsp + 0x8]
+   0x0000000000401197 <+195>:	lea    0x30(%rsp),%rsi              # rsi = A[rsp + 0x30]
+   0x000000000040119c <+200>:	mov    %rbx,%rcx                    # rcx = rbx
+L10:
+   0x000000000040119f <+203>:	mov    (%rax),%rdx                  # rdx = M[rax]
+   0x00000000004011a2 <+206>:	mov    %rdx,0x8(%rcx)               # M[rcx + 0x8] = rdx
+   0x00000000004011a6 <+210>:	add    $0x8,%rax                    # rax += 0x8
+   0x00000000004011aa <+214>:	cmp    %rsi,%rax                    # |-> if (rax == rsi), then goto L12
+   0x00000000004011ad <+217>:	je     0x4011b4 <phase_6+224>       # |   else:
+   0x00000000004011af <+219>:	mov    %rdx,%rcx                    # |     rcx = rdx
+   0x00000000004011b2 <+222>:	jmp    0x40119f <phase_6+203>       # |     goto L10
+L12:
+   0x00000000004011b4 <+224>:	movq   $0x0,0x8(%rdx)               # M[rdx + 0x8] = 0x0
+   0x00000000004011bc <+232>:	mov    $0x5,%ebp                    # ebp = 0x5
+L13:
+   0x00000000004011c1 <+237>:	mov    0x8(%rbx),%rax               # rax = M[rbx + 0x8]
+   0x00000000004011c5 <+241>:	mov    (%rax),%eax                  # eax = M[rax]
+   0x00000000004011c7 <+243>:	cmp    %eax,(%rbx)                  # |-> if (M[rbx] >= eax), then goto L14
+   0x00000000004011c9 <+245>:	jge    0x4011d0 <phase_6+252>       # |   else:
+   0x00000000004011cb <+247>:	callq  0x401574 <explode_bomb>      # |     explode
+L14:
+   0x00000000004011d0 <+252>:	mov    0x8(%rbx),%rbx               # rbx = M[rbx + 0x8]
+   0x00000000004011d4 <+256>:	sub    $0x1,%ebp                    # ebp -= 0x1
+   0x00000000004011d7 <+259>:	jne    0x4011c1 <phase_6+237>     ? #

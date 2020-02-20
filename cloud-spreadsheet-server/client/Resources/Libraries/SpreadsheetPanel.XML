@@ -1,0 +1,162 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SpreadsheetPanel</name>
+    </assembly>
+    <members>
+        <member name="T:SS.SelectionChangedHandler">
+            <summary>
+            The type of delegate used to register for SelectionChanged events
+            </summary>
+            <param name="sender"></param>
+        </member>
+        <member name="T:SS.SpreadsheetPanel">
+            <summary>
+            A panel that displays a spreadsheet with 26 columns (labeled A-Z) and 99 rows
+            (labeled 1-99).  Each cell on the grid can display a non-editable string.  One 
+            of the cells is always selected (and highlighted).  When the selection changes, a 
+            SelectionChanged event is fired.  Clients can register to be notified of
+            such events.
+            
+            None of the cells are editable.  They are for display purposes only.
+            </summary>
+        </member>
+        <member name="M:SS.SpreadsheetPanel.#ctor">
+            <summary>
+            Creates an empty SpreadsheetPanel
+            </summary>
+        </member>
+        <member name="M:SS.SpreadsheetPanel.Clear">
+            <summary>
+            Clears the display.
+            </summary>
+        </member>
+        <member name="M:SS.SpreadsheetPanel.SetValue(System.Int32,System.Int32,System.String)">
+            <summary>
+            If the zero-based column and row are in range, sets the value of that
+            cell and returns true.  Otherwise, returns false.
+            </summary>
+            <param name="col"></param>
+            <param name="row"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SS.SpreadsheetPanel.SetColor(System.Int32,System.Int32,System.Drawing.Color)">
+            <summary>
+            If the zero-based column and row are in range, sets the color of that
+            cell and returns true.  Otherwise, returns false.
+            </summary>
+            <param name="col"></param>
+            <param name="row"></param>
+            <param name="color"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SS.SpreadsheetPanel.GetValue(System.Int32,System.Int32,System.String@)">
+            <summary>
+            If the zero-based column and row are in range, assigns the value
+            of that cell to the out parameter and returns true.  Otherwise,
+            returns false.
+            </summary>
+            <param name="col"></param>
+            <param name="row"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SS.SpreadsheetPanel.SetSelection(System.Int32,System.Int32)">
+            <summary>
+            If the zero-based column and row are in range, uses them to set
+            the current selection and returns true.  Otherwise, returns false.
+            </summary>
+            <param name="col"></param>
+            <param name="row"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SS.SpreadsheetPanel.GetSelection(System.Int32@,System.Int32@)">
+            <summary>
+            Assigns the column and row of the current selection to the
+            out parameters.
+            </summary>
+            <param name="col"></param>
+            <param name="row"></param>
+        </member>
+        <member name="M:SS.SpreadsheetPanel.OnResize(System.EventArgs)">
+            <summary>
+            When the SpreadsheetPanel is resized, we set the size and locations of the three
+            components that make it up.
+            </summary>
+            <param name="eventargs"></param>
+        </member>
+        <member name="E:SS.SpreadsheetPanel.SelectionChanged">
+            <summary>
+            The event used to send notifications of a selection change
+            </summary>
+        </member>
+        <member name="T:SS.SpreadsheetPanel.Address">
+            <summary>
+            Used internally to keep track of cell addresses
+            </summary>
+        </member>
+        <member name="T:SS.SpreadsheetPanel.DrawingPanel">
+            <summary>
+            The panel where the spreadsheet grid is drawn.  It keeps track of the
+            current selection as well as what is supposed to be drawn in each cell.
+            </summary>
+        </member>
+        <member name="M:SS.SpreadsheetPanel.DrawingPanel.DrawColumnLabel(System.Drawing.Graphics,System.Int32,System.Drawing.Font)">
+            <summary>
+            Draws a column label.  The columns are indexed beginning with zero.
+            </summary>
+            <param name="g"></param>
+            <param name="x"></param>
+            <param name="f"></param>
+        </member>
+        <member name="M:SS.SpreadsheetPanel.DrawingPanel.DrawRowLabel(System.Drawing.Graphics,System.Int32,System.Drawing.Font)">
+            <summary>
+            Draws a row label.  The rows are indexed beginning with zero.
+            </summary>
+            <param name="g"></param>
+            <param name="y"></param>
+            <param name="f"></param>
+        </member>
+        <member name="M:SS.SpreadsheetPanel.DrawingPanel.OnMouseClick(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Determines which cell, if any, was clicked.  Generates a SelectionChanged event.  All of
+            the indexes are zero based.
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="F:SS.SpreadsheetPanel.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:SS.SpreadsheetPanel.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:SS.SpreadsheetPanel.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:SS.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:SS.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:SS.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+    </members>
+</doc>

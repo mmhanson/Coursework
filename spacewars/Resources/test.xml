@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<settings>
+  <WorldSize>1250</WorldSize>
+  <StartHP>10</StartHP>
+  <EngineStrength>.1</EngineStrength>
+  <TurnRate>3</TurnRate>
+  <ProjFiringDelay>5</ProjFiringDelay>
+  <RespawnDelay>200</RespawnDelay>
+  <ProjVelocity>18</ProjVelocity>
+
+  <Star>
+    <x>0</x>
+    <y>0</y>
+    <mass>0.01</mass>
+  </Star>
+  <Star>
+    <x>500</x>
+    <y>250</y>
+    <mass>0.01</mass>
+  </Star>
+  <Star>
+    <x>-100</x>
+    <y>-200</y>
+    <mass>0.01</mass>
+  </Star>
+</settings>

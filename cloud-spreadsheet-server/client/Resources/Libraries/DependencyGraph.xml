@@ -1,0 +1,115 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DependencyGraph</name>
+    </assembly>
+    <members>
+        <!-- Badly formed XML comment ignored for member "T:SpreadsheetUtilities.DependencyGraph" -->
+        <member name="M:SpreadsheetUtilities.DependencyGraph.#ctor">
+            <summary>
+            Creates an empty DependencyGraph.
+            </summary>
+        </member>
+        <member name="P:SpreadsheetUtilities.DependencyGraph.Size">
+            <summary>
+            The number of ordered pairs in the DependencyGraph.
+            
+            This is the number of edges, not the number of nodes in the graph.
+            </summary>
+        </member>
+        <member name="P:SpreadsheetUtilities.DependencyGraph.Item(System.String)">
+            <summary>
+            The size of dependees(s).
+            This property is an example of an indexer.  If dg is a DependencyGraph, you would
+            invoke it like this:
+            dg["a"]
+            It should return the size of dependees("a")
+            </summary>
+        </member>
+        <member name="M:SpreadsheetUtilities.DependencyGraph.HasDependents(System.String)">
+            <summary>
+            Determine if a node in the dependency graph has dependents.
+            </summary>
+            <remarks>
+            The definition of 'dependent' is described in the class summary.
+            </remarks>
+            <param name="s">
+            string denoting the node to determine if it has dependents
+            </param>
+            <return>
+            true if the node referenced by 's' has dependents, false otherwise
+            </return>
+        </member>
+        <member name="M:SpreadsheetUtilities.DependencyGraph.HasDependees(System.String)">
+            <summary>
+            Determine if a node in the dependency graph has dependees.
+            </summary>
+            <remarks>
+            The definition of 'dependee' is described in the class summary
+            </remarks>
+            <param name="s">
+            string denoting the node to determine if it has dependees
+            </param>
+            <return>
+            true if the node referenced by 's' has dependees, false otherwise
+            </return>
+        </member>
+        <member name="M:SpreadsheetUtilities.DependencyGraph.GetDependents(System.String)">
+            <summary>
+            Enumerate all dependents(s) of a node.
+            </summary>
+            <remarks>A node 'x' has a dependent 'y' iff the element (x, y) is in the graph</remarks>
+            <param name="s">String denoting the node to get the dependents of</param>
+            <return>An enumeration of strings representing nodes which directly depend on 's'</return>
+        </member>
+        <member name="M:SpreadsheetUtilities.DependencyGraph.GetDependees(System.String)">
+            <summary>
+            Enumerate all dependees(s) of a node.
+            </summary>
+            <remarks>A node 'y' has a dependee 'x' iff the element (x, y) is in the graph</remarks>
+            <param name="s">String denoting the node to get the dependees of</param>
+            <returns>An enumeration of strings representing the nodes in which the node 's' directly depends on</returns>
+        </member>
+        <member name="M:SpreadsheetUtilities.DependencyGraph.AddDependency(System.String,System.String)">
+            <summary>
+            <para>Adds the ordered pair (s,t), if it doesn't exist</para>
+            <para>The ordered pair (s, t) should be thought of as:</para>   
+              t depends on s
+            </summary>
+            <param name="s"> s must be evaluated first. T depends on S </param>
+            <param name="t"> t cannot be evaluated until s is </param>
+        </member>
+        <member name="M:SpreadsheetUtilities.DependencyGraph.RemoveDependency(System.String,System.String)">
+            <summary>
+            Remove the ordered pair (s,t), if it exists
+            </summary>
+            <param name="s"> The dependee node </param>
+            <param name="t"> The dependant node </param>
+        </member>
+        <member name="M:SpreadsheetUtilities.DependencyGraph.ReplaceDependents(System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Remove all existing ordered pairs of the form (s,r).
+            Then, for each t in newDependents, adds the ordered pair (s,t).
+                <para>
+                    i.e., it removes all dependents for 's' and replaces them with the dependents
+                    enumerated by 'newDependents'.
+                </para>
+            </summary>
+            <param name="s">String referencing node to replace dependents of</param>
+            <param name="newDependents">Enumeration of dependents to replace dependents of 's'</param>
+        </member>
+        <member name="M:SpreadsheetUtilities.DependencyGraph.ReplaceDependees(System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Removes all existing ordered pairs of the form (r,s).  Then, for each 
+            t in newDependees, adds the ordered pair (t,s).
+            
+                <para>
+                    i.e., removes all dependees for 's' and repalces them with the
+                    dependees enumerated in 'newDependees'
+                </para>
+            </summary>
+            <param name="s">String referending node to remove all dependees of</param>
+            <param name="newDependees">Enumeration of dependees to replace dependees of 's'</param>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,9 @@
+These tests are based on "real" programs. The provided .c files show the source code that was roughly used to compile the assembly file.
+
+All of these tests expect some input because they use the "readr" instruction.
+
+factorial - Expects a single positive integer. Computes the factorial of that integer.
+
+log2 - Expects a single positive integer. Computes base 2 logarithm of that integer.
+
+sort - Expects 6 integers. Sorts them in ascending order.
